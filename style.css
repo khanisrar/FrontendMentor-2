@@ -588,6 +588,7 @@ header nav {
     align-items: center;
     padding: 15px ;
     border-bottom: 4px solid hsl(223, 64%, 98%);
+    width: 100vw;
 }
 header nav .logo #menu {
     font-size: 30px;
@@ -654,6 +655,7 @@ header nav .icon img {
 
 }
 header .container {
+    width: 100vw;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -663,7 +665,6 @@ header .container {
     background-color: green;
 } */
 header .container .left .bigImage {
-    width: 320px;
     cursor: pointer;
     /* background-color: red; */
     width: 100%;
@@ -709,22 +710,14 @@ header .container .left .smallImages img {
     border-radius: 10px;
     cursor: pointer;
     transition: .3s;
+    display: none;
     
 }
-header .container .left .smallImages img:first-child {
-    opacity: .5;
-    border: 3px solid hsl(26, 100%, 55%);
-}
-header .container .left .smallImages img:first-child.active {
-    opacity: 1;
-    border: 3px solid hsl(26, 100%, 55%);
-}
-header .container .left .smallImages img:hover {
-    opacity: .5;
-}
+
 header .container .right {
     /* background-color: red; */
     padding: 20px;
+    margin: 0;
     width: 100%;
 }
 header .container .right h3 {
