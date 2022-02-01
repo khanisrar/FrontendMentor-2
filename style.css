@@ -1,0 +1,846 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+header {
+    width: 70vw;
+    height: 90vh;
+    margin: 0 auto;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 4px solid hsl(223, 64%, 98%);
+}
+header nav .navlink {
+    position: relative;
+    left: -80px;
+}
+header nav .navlink a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    color: hsl(220, 14%, 75%);
+    margin: 0 10px;
+    padding-bottom: 35px;
+    transition: .2s;
+}
+header nav .navlink a:hover {
+    color: hsl(219, 9%, 45%);
+    border-bottom: 4px solid hsl(26, 100%, 55%);
+}
+
+header nav .icon {
+    display: flex;
+    align-items: center;
+}
+header nav .icon #avatar {
+    width: 45px;
+    border-radius: 50%;
+    margin-left: 40px;
+    border: 3px solid hsl(26, 100%, 55%);
+    cursor: pointer;
+
+}
+header nav .icon img {
+    width: 25px;
+    cursor: pointer;
+
+}
+header .container {
+    padding: 70px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .container .left .bigImage {
+    width: 370px;
+    cursor: pointer;
+}
+header .container .left .bigImage img {
+    width: 100%;
+    border-radius: 15px;
+
+}
+header .container .left .smallImages {
+    width: 370px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+header .container .left .smallImages img {
+    width: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    
+}
+header .container .left .smallImages img:first-child {
+    opacity: .5;
+    border: 3px solid hsl(26, 100%, 55%);
+}
+header .container .left .smallImages img:first-child.active {
+    opacity: 1;
+    border: 3px solid hsl(26, 100%, 55%);
+}
+header .container .left .smallImages img:hover {
+    opacity: .5;
+}
+header .container .right {
+    /* background-color: red; */
+    padding: 40px 0 0 20px;
+    width: 50%;
+}
+header .container .right h3 {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0;
+    color: hsl(26, 100%, 55%);
+}
+header .container .right h1 {
+    font-size: 35px;
+    margin: 20px 0;
+    line-height: 40px;
+    font-weight: 900;
+}
+header .container .right p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: hsl(219, 9%, 45%);
+}
+header .container .right .price {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+}
+header .container .right .price h2 {
+    font-size: 25px;
+    font-weight: 700;
+}
+header .container .right .price h3 {
+    font-size: 16px;
+    background:hsl(25, 100%, 94%);
+    padding: 3px 7px;
+    color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+header .container .right .discount h2 {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+header .container .right .rightBottom {
+    display: flex;
+    margin: 40px 0;
+}
+header .container .right .rightBottom .qnt {
+    background-color:hsl(223, 64%, 98%) ;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+header .container .right .rightBottom button {
+    background:hsl(26, 100%, 55%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(223, 64%, 98%) ;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+header .container .right .rightBottom button:hover {
+    background:hsla(26, 100%, 55%, 0.692) ;
+}
+header .container .right .rightBottom button img {
+    margin-right: 15px;
+    width: 15px;
+}
+.cart {
+    background-color: #fff;
+    width:300px;
+    border-radius: 10px;
+    position: absolute;
+    right: 180px;
+    top: 80px;
+    box-shadow: 0px 0px 10px hsl(219, 9%, 45%);
+    display: none;
+}
+
+.cart.active {
+    display: block;
+}
+.cart .uCart {
+    border-bottom: 3px solid  hsl(219, 9%, 45%);
+    padding: 15px;
+}
+.cart .uCart h2 {
+    font-size: 20px;
+}
+.cart .dCart {
+    width: 100%;
+    height: 170px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart .dCart h2 {
+    font-size: 16px;
+}
+
+/* position=fixed */
+.FbigContainer {
+    /* background-color: red; */
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.726) ;
+    display: none;
+    /* display: block; */
+}
+
+ .Fcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+   
+    /* right: 200px; */
+}
+/*  .container .left {
+    width: 40%;
+    background-color: green;
+} */
+ .Fcontainer .left .bigImage {
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+.Fcontainer .left #cross {
+    font-size: 30px;
+    border: none;
+    background: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    right: -530px;
+    margin-bottom: 20px;
+    transition: .3s;
+
+}
+.Fcontainer .left #cross:hover {
+    color: hsl(26, 100%, 55%);
+}
+.Fcontainer .left .bigImage button {
+    font-size: 30px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    padding: 5px 14px;
+    cursor: pointer;
+    font-weight: 900;
+
+}
+#next {
+    position: relative;
+    left: -25px;
+}
+#prev {
+    position: relative;
+    right: -25px;
+}
+
+.Fcontainer .left .bigImage button:hover {
+     color: hsl(26, 100%, 55%);
+}
+ .Fcontainer .left .bigImage img {
+    width: 100%;
+    border-radius: 15px;
+
+}
+ .Fcontainer .left .smallImages {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    /* background-color: green; */
+    margin-top: 10px;
+}
+
+ .Fcontainer .left .smallImages img {
+    width: 15%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    margin: 10px;
+}
+.Fcontainer .left .smallImages img:hover {
+    opacity: .5;
+}
+ .Fcontainer .left .smallImages img:first-child {
+    opacity: .5;
+    border: 3px solid hsl(26, 100%, 55%);
+}
+ .Fcontainer .left .smallImages img:first-child.active {
+    opacity: 1;
+    border: 3px solid hsl(26, 100%, 55%);
+}
+ .Fcontainer .left .smallImages img:hover {
+    opacity: .5;
+}
+#menu,#times,#after,#before {
+    display: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+    header {
+        width: 80vw;
+        height: 90vh;
+        margin: 0 auto;
+    }
+   
+    header nav .navlink {
+        position: relative;
+        left: 0;
+    }
+    header .container .left {
+    width: 100%;
+    margin-right: 20px;
+}
+header .container .right {
+    width: 100%;
+    margin-left: 20px;
+}
+.FbigContainer {
+    /* background-color: red; */
+    width: 100vw;
+    height: 130vh;
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.726) ;
+    display: none;
+    /* display: block; */
+}
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        width: 95vw;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    header .container {
+        padding: 50px 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+   
+}
+@media screen and (max-width: 850px) {
+    header {
+        width: 95vw;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    header .container {
+        padding: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    header .container .left .bigImage {
+        width: 280px;
+        cursor: pointer;
+    }
+    header .container .left .bigImage img {
+        width: 100%;
+        border-radius: 15px;
+    
+    }
+    header .container .left .smallImages {
+        width: 280px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    header .container .left .smallImages img {
+        width: 20%;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .3s;
+        
+    }
+    header .container .right {
+        /* background-color: red; */
+        padding: 30px 0 0 20px;
+        width: 50%;
+        margin-right: 30px;
+    }
+    header .container .right h3 {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        color: hsl(26, 100%, 55%);
+    }
+    header .container .right h1 {
+        font-size: 25px;
+        margin: 10px 0;
+        line-height: 30px;
+        font-weight: 900;
+    }
+    header .container .right p {
+        font-size: 13px;
+        font-weight: 400;
+        margin: 10px 0;
+        color: hsl(219, 9%, 45%);
+    }
+    header .container .right .price {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    
+    }
+    header .container .right .price h2 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    header .container .right .price h3 {
+        font-size: 12px;
+        background:hsl(25, 100%, 94%);
+        padding: 3px 7px;
+        color: hsl(26, 100%, 55%);
+        font-weight: 700;
+        margin-left: 20px;
+        border-radius: 5px;
+    }
+    header .container .right .discount h2 {
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: line-through;
+    }
+    
+    header .container .right .rightBottom {
+        display: flex;
+        /* flex-direction: column; */
+        margin:20px 0;
+    }
+    header .container .right .rightBottom .qnt {
+        background-color:hsl(223, 64%, 98%) ;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 120px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+    header .container .right .rightBottom button {
+        background:hsl(26, 100%, 55%) ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: hsl(223, 64%, 98%) ;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 700;
+        margin-left: 30px;
+        cursor: pointer;
+        transition: .3s;
+    }
+    header nav .navlink a {
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    header .container {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px ;
+        border-bottom: 4px solid hsl(223, 64%, 98%);
+    }
+    header nav .logo #menu {
+        font-size: 30px;
+        display: initial;
+        border: none;
+        background: none;
+        margin: 0 10px;
+        font-weight: 500;
+        color:hsl(219, 9%, 45%);
+    }
+    header nav .navlink {
+        position: absolute;
+        left: 0;
+        top: 0;
+        left: -70%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 70%;
+        background-color: #fff;
+        transition: .3s;
+        z-index: 100;
+        /* display: none; */
+    }
+    
+    header nav .navlink a {
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 700;
+        color: #000;
+        margin: 0 ;
+        padding: 12px 30px;
+    }
+    header nav .navlink #times {
+        display: block;
+        font-size: 25px;
+        border: none;
+        width: 30px;
+        background: none;
+        color: #000;
+        font-weight: 700;
+        cursor: pointer;
+        margin:10px  30px 40px 30px;
+        transition: .3s;
+        
+    }
+    
+    
+
+    header .container .left .bigImage {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .container .left .bigImage img {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 15px;
+    
+    }
+    header .container .left .smallImages {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    header .container .right {
+        width: 100%;
+    }
+    
+  
+    
+}
+@media screen and (max-width: 480px) {
+    
+header {
+    width: 100vw;
+    height: 120vh;
+    margin: 0 auto;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px ;
+    border-bottom: 4px solid hsl(223, 64%, 98%);
+}
+header nav .logo #menu {
+    font-size: 30px;
+    display: initial;
+    border: none;
+    background: none;
+    margin: 0 10px;
+    font-weight: 500;
+    color:hsl(219, 9%, 45%);
+}
+header nav .navlink {
+    position: absolute;
+    left: 0;
+    top: 0;
+    left: -70%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    background-color: #fff;
+    transition: .3s;
+    z-index: 100;
+    /* display: none; */
+}
+
+header nav .navlink a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    margin: 0 ;
+    padding: 12px 30px;
+}
+header nav .navlink #times {
+    display: block;
+    font-size: 25px;
+    border: none;
+    width: 30px;
+    background: none;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    margin:10px  30px 40px 30px;
+    transition: .3s;
+    
+}
+
+
+header nav .icon {
+    display: flex;
+    align-items: center;
+}
+header nav .icon #avatar {
+    width: 25px;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: 2px solid hsl(26, 100%, 55%);
+    cursor: pointer;
+
+}
+header nav .icon img {
+    width: 20px;
+    cursor: pointer;
+
+}
+header .container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+/* header .container .left {
+    width: 40%;
+    background-color: green;
+} */
+header .container .left .bigImage {
+    width: 320px;
+    cursor: pointer;
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .container .left .bigImage #before {
+    display: initial;
+    position: absolute;
+    left: 20px;
+    font-size: 25px;
+    padding: 2px 10px;
+    border-radius: 50%;
+    border: none;
+}
+header .container .left .bigImage #after {
+    display: initial;
+    position: absolute;
+    right: 20px;
+    font-size: 25px;
+    padding: 2px 10px;
+    border-radius: 50%;
+    border: none;
+
+}
+header .container .left .bigImage img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0;
+
+}
+header .container .left .smallImages {
+    width: 320px;
+    display: none;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+header .container .left .smallImages img {
+    width: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    
+}
+header .container .left .smallImages img:first-child {
+    opacity: .5;
+    border: 3px solid hsl(26, 100%, 55%);
+}
+header .container .left .smallImages img:first-child.active {
+    opacity: 1;
+    border: 3px solid hsl(26, 100%, 55%);
+}
+header .container .left .smallImages img:hover {
+    opacity: .5;
+}
+header .container .right {
+    /* background-color: red; */
+    padding: 20px;
+    width: 100%;
+}
+header .container .right h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    color: hsl(26, 100%, 55%);
+}
+header .container .right h1 {
+    font-size: 25px;
+    margin: 10px 0;
+    line-height: 30px;
+    font-weight: 900;
+}
+header .container .right p {
+    font-size: 15px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: hsl(219, 9%, 45%);
+}
+header .container .right .price {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+}
+header .container .right .price h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+header .container .right .price h3 {
+    font-size: 12px;
+    background:hsl(25, 100%, 94%);
+    padding: 3px 7px;
+    color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+header .container .right .discount h2 {
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+header .container .right .rightBottom {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+header .container .right .rightBottom .qnt {
+    background-color:hsl(223, 64%, 98%) ;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px auto;
+    user-select: none;
+    
+}
+header .container .right .rightBottom button {
+    background:hsl(26, 100%, 55%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    color: hsl(223, 64%, 98%) ;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left:0;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .3s;
+}
+
+header .container .right .rightBottom button img {
+    margin-right: 15px;
+    width: 15px;
+}
+
+.cart {
+    background-color: #fff;
+    width:95%;
+    border-radius: 10px;
+    position: absolute;
+    right:0;
+    top: 75px;
+    margin: 8px;
+    box-shadow: 0px 0px 10px hsl(219, 9%, 45%);
+    display: none;
+}
+
+.cart .uCart {
+    border-bottom: 3px solid  hsl(219, 9%, 45%);
+    padding: 15px;
+}
+.cart .uCart h2 {
+    font-size: 20px;
+}
+.cart .dCart {
+    width: 100%;
+    height: 170px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart .dCart h2 {
+    font-size: 16px;
+}
+}
+    
